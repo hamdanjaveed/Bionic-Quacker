@@ -17,7 +17,7 @@ public class Main extends StateBasedGame {
 
 	public static void main(String[] args) throws SlickException {
 		AppGameContainer appGameContainer = new AppGameContainer(new ScalableGame(new Main(), GAME_WIDTH, GAME_HEIGHT));
-		appGameContainer.setDisplayMode(GAME_WIDTH, GAME_HEIGHT, FULL_SCREEN;
+		appGameContainer.setDisplayMode(GAME_WIDTH, GAME_HEIGHT, FULL_SCREEN);
 		appGameContainer.setMouseGrabbed(MOUSE_GRABBED);
 		appGameContainer.setTargetFrameRate(TARGET_FPS);
 		appGameContainer.setTitle(GAME_NAME);
