@@ -7,7 +7,7 @@
     <ignored path="Bionic Quacker.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="1836557f-6082-4c9d-895e-110ca322c284" time="1368056272333" ignored="false" />
-    <file path="/Main.java" changelist="1836557f-6082-4c9d-895e-110ca322c284" time="1368057283071" ignored="false" />
+    <file path="/Main.java" changelist="1836557f-6082-4c9d-895e-110ca322c284" time="1368057483380" ignored="false" />
     <file path="/fragment.java" changelist="1836557f-6082-4c9d-895e-110ca322c284" time="1368057305810" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +72,7 @@
       <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="14" selection-start="732" selection-end="732" vertical-scroll-proportion="0.3448276">
+            <state line="31" column="11" selection-start="1150" selection-end="1150" vertical-scroll-proportion="0.59386975">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -503,7 +503,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="14" selection-start="732" selection-end="732" vertical-scroll-proportion="0.3448276">
+        <state line="31" column="11" selection-start="1150" selection-end="1150" vertical-scroll-proportion="0.59386975">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
