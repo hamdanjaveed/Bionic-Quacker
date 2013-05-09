@@ -13,6 +13,10 @@ public class Game extends BasicGameState {
 	private Image bionicQuacker;
 	private Image house;
 	private Image ghostHouse;
+	private Image continueImage;
+	private Image continueImageGrey;
+
+	private boolean canContinue;
 
 	private int[][] grid;
 	private int housesPlaced;
@@ -35,7 +39,12 @@ public class Game extends BasicGameState {
 		house = new Image("gameplay/House.png");
 		ghostHouse = new Image("gameplay/House.png");
 		ghostHouse.setAlpha(0.3f);
+		continueImage = new Image("gameplay/Continue.png");
+		continueImageGrey = new Image("gameplay/Continue.png");
+		continueImageGrey.setAlpha(0.3f);
+	}
 
+	public void enter(GameContainer gameContainer, StateBasedGame stateBasedGame) {
 		grid = new int[32][18];
 		housesPlaced = 0;
 	}
@@ -54,7 +63,15 @@ public class Game extends BasicGameState {
 
 		graphics.drawString("Houses placed: " + housesPlaced + "/20", 10, 10);
 
-		ghostHouse.draw(mouseTileX * 40, mouseTileY * 40);
+		if (housesPlaced < 20) {
+			ghostHouse.draw(mouseTileX * 40, mouseTileY * 40);
+		}
+
+		if (canContinue) {
+			continueImage.draw(1000, 10);
+		} else {
+			continueImageGrey.draw(1000, 10);
+		}
 	}
 
 	public void update(GameContainer gameContainer, StateBasedGame stateBasedGame, int i) throws SlickException {
@@ -77,6 +94,8 @@ public class Game extends BasicGameState {
 				housesPlaced--;
 			}
 		}
+
+		canContinue = housesPlaced == 20;
 	}
 
 }

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1836557f-6082-4c9d-895e-110ca322c284" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gameplay/Game.java" afterPath="$PROJECT_DIR$/src/gameplay/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Main.java" afterPath="$PROJECT_DIR$/src/main/Main.java" />
     </list>
     <ignored path="Bionic Quacker.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -11,7 +10,7 @@
     <file path="/Main.java" changelist="1836557f-6082-4c9d-895e-110ca322c284" time="1368070260929" ignored="false" />
     <file path="/fragment.java" changelist="1836557f-6082-4c9d-895e-110ca322c284" time="1368067045101" ignored="false" />
     <file path="/Menu.java" changelist="1836557f-6082-4c9d-895e-110ca322c284" time="1368066399342" ignored="false" />
-    <file path="/Game.java" changelist="1836557f-6082-4c9d-895e-110ca322c284" time="1368070642918" ignored="false" />
+    <file path="/Game.java" changelist="1836557f-6082-4c9d-895e-110ca322c284" time="1368071196278" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +83,7 @@
       <file leaf-file-name="Game.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gameplay/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="30" selection-start="925" selection-end="925" vertical-scroll-proportion="0.40613025">
+            <state line="66" column="56" selection-start="1844" selection-end="1844" vertical-scroll-proportion="0.44444445">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -599,7 +598,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gameplay/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="30" selection-start="925" selection-end="925" vertical-scroll-proportion="0.40613025">
+        <state line="66" column="56" selection-start="1844" selection-end="1844" vertical-scroll-proportion="0.44444445">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
