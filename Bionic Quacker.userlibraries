@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="Slick2D">
+    <archive path="/Users/hamdan/Documents/Development/Java/Bionic Quacker/src/lib/lwjgl.jar" />
+    <archive path="/Users/hamdan/Documents/Development/Java/Bionic Quacker/src/lib/lwjgl_util.jar" />
+    <archive path="/Users/hamdan/Documents/Development/Java/Bionic Quacker/src/lib/slick.jar" />
+  </library>
+</eclipse-userlibraries>
+
