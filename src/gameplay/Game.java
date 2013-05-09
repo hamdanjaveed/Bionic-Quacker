@@ -1,6 +1,7 @@
 package gameplay;
 
 import org.newdawn.slick.*;
+import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
@@ -15,6 +16,8 @@ public class Game extends BasicGameState {
 	private Image ghostHouse;
 	private Image continueImage;
 	private Image continueImageGrey;
+
+	private Rectangle continueRect;
 
 	private boolean canContinue;
 
@@ -42,6 +45,7 @@ public class Game extends BasicGameState {
 		continueImage = new Image("gameplay/Continue.png");
 		continueImageGrey = new Image("gameplay/Continue.png");
 		continueImageGrey.setAlpha(0.3f);
+		continueRect = new Rectangle(1050, 10, 300, 100);
 	}
 
 	public void enter(GameContainer gameContainer, StateBasedGame stateBasedGame) {
@@ -68,9 +72,9 @@ public class Game extends BasicGameState {
 		}
 
 		if (canContinue) {
-			continueImage.draw(1000, 10);
+			continueImage.draw(1050, 10);
 		} else {
-			continueImageGrey.draw(1000, 10);
+			continueImageGrey.draw(1050, 10);
 		}
 	}
 
@@ -85,6 +89,8 @@ public class Game extends BasicGameState {
 		mouseTileX = mx / 40;
 		mouseTileY = my / 40;
 
+		canContinue = housesPlaced == 20;
+
 		if (input.isMousePressed(Input.MOUSE_LEFT_BUTTON)) {
 			if (grid[mouseTileX][mouseTileY] == 0 && housesPlaced < 20) {
 				grid[mouseTileX][mouseTileY] = 1;
@@ -93,9 +99,11 @@ public class Game extends BasicGameState {
 				grid[mouseTileX][mouseTileY] = 0;
 				housesPlaced--;
 			}
-		}
 
-		canContinue = housesPlaced == 20;
+			if (canContinue && continueRect.contains(mx, my)) {
+				// stomp
+			}
+		}
 	}
 
 }
