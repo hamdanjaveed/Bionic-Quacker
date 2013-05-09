@@ -26,6 +26,7 @@ public class Main extends StateBasedGame {
 		appGameContainer.setMouseGrabbed(MOUSE_GRABBED);
 		appGameContainer.setTargetFrameRate(TARGET_FPS);
 		appGameContainer.setTitle(GAME_NAME);
+		appGameContainer.setShowFPS(false);
 		appGameContainer.start();
 	}
 

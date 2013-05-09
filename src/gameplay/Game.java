@@ -12,9 +12,13 @@ public class Game extends BasicGameState {
 	private Image gridImage;
 	private Image bionicQuacker;
 	private Image house;
+	private Image ghostHouse;
 
 	private int[][] grid;
 	private int housesPlaced;
+
+	private int mouseTileX;
+	private int mouseTileY;
 
 	public Game(int assignedID) {
 		STATE_ID = assignedID;
@@ -29,6 +33,8 @@ public class Game extends BasicGameState {
 		gridImage = new Image("gameplay/Grid.png");
 		bionicQuacker = new Image("gameplay/Bionic Quacker.png");
 		house = new Image("gameplay/House.png");
+		ghostHouse = new Image("gameplay/House.png");
+		ghostHouse.setAlpha(0.3f);
 
 		grid = new int[32][18];
 		housesPlaced = 0;
@@ -45,6 +51,10 @@ public class Game extends BasicGameState {
 				}
 			}
 		}
+
+		graphics.drawString("Houses placed: " + housesPlaced + "/20", 10, 10);
+
+		ghostHouse.draw(mouseTileX * 40, mouseTileY * 40);
 	}
 
 	public void update(GameContainer gameContainer, StateBasedGame stateBasedGame, int i) throws SlickException {
@@ -53,14 +63,18 @@ public class Game extends BasicGameState {
 			gameContainer.exit();
 		}
 
+		int mx = input.getMouseX();
+		int my = input.getMouseY();
+		mouseTileX = mx / 40;
+		mouseTileY = my / 40;
+
 		if (input.isMousePressed(Input.MOUSE_LEFT_BUTTON)) {
-			int mx = input.getMouseX();
-			int my = input.getMouseY();
-			int tx = mx / 40;
-			int ty = my / 40;
-			if (grid[tx][ty] == 0) {
-				grid[tx][ty] = 1;
+			if (grid[mouseTileX][mouseTileY] == 0 && housesPlaced < 20) {
+				grid[mouseTileX][mouseTileY] = 1;
 				housesPlaced++;
+			} else if (grid[mouseTileX][mouseTileY] == 1) {
+				grid[mouseTileX][mouseTileY] = 0;
+				housesPlaced--;
 			}
 		}
 	}
