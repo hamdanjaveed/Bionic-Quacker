@@ -1,5 +1,6 @@
 package main;
 
+import menu.Menu;
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.ScalableGame;
@@ -8,12 +9,15 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class Main extends StateBasedGame {
 
-	private static final String  GAME_NAME     = "Bionic Quacker";
-	private static final int     GAME_WIDTH    = 1280;
-	private static final int     GAME_HEIGHT   = 720;
-	private static final boolean MOUSE_GRABBED = false;
-	private static final int     TARGET_FPS    = 60;
-	private static final boolean FULL_SCREEN   = false;
+	private static final String  GAME_NAME         = "Bionic Quacker";
+	private static final int     GAME_WIDTH        = 1280;
+	private static final int     GAME_HEIGHT       = 720;
+	private static final boolean MOUSE_GRABBED     = false;
+	private static final int     TARGET_FPS        = 60;
+	private static final boolean FULL_SCREEN       = false;
+
+	private static final int     MENU_STATE_ID     = 0;
+	private static final int     GAMEPLAY_STATE_ID = 1;
 
 	public static void main(String[] args) throws SlickException {
 		AppGameContainer appGameContainer = new AppGameContainer(new ScalableGame(new Main(), GAME_WIDTH, GAME_HEIGHT));
@@ -29,6 +33,12 @@ public class Main extends StateBasedGame {
 	}
 
 	public void initStatesList(GameContainer gameContainer) throws SlickException {
-		// TODO
+		addState(new Menu(MENU_STATE_ID));
+		// need to add gameplay state
 	}
+
+	public static int getGameplayStateId() {
+		return GAMEPLAY_STATE_ID;
+	}
+
 }
