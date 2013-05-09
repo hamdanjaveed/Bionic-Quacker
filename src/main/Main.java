@@ -1,5 +1,6 @@
 package main;
 
+import gameplay.Game;
 import menu.Menu;
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.GameContainer;
@@ -34,7 +35,7 @@ public class Main extends StateBasedGame {
 
 	public void initStatesList(GameContainer gameContainer) throws SlickException {
 		addState(new Menu(MENU_STATE_ID));
-		// need to add gameplay state
+		addState(new Game(GAMEPLAY_STATE_ID));
 	}
 
 	public static int getGameplayStateId() {

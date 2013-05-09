@@ -2,16 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1836557f-6082-4c9d-895e-110ca322c284" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/menu/Menu.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/gameplay/Game.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Main.java" afterPath="$PROJECT_DIR$/src/main/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Bionic Quacker.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="1836557f-6082-4c9d-895e-110ca322c284" time="1368064206066" ignored="false" />
-    <file path="/Main.java" changelist="1836557f-6082-4c9d-895e-110ca322c284" time="1368066393500" ignored="false" />
+    <file path="/Main.java" changelist="1836557f-6082-4c9d-895e-110ca322c284" time="1368066818934" ignored="false" />
     <file path="/fragment.java" changelist="1836557f-6082-4c9d-895e-110ca322c284" time="1368057305810" ignored="false" />
     <file path="/Menu.java" changelist="1836557f-6082-4c9d-895e-110ca322c284" time="1368066399342" ignored="false" />
+    <file path="/Game.java" changelist="1836557f-6082-4c9d-895e-110ca322c284" time="1368066806564" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,11 +73,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="33" selection-start="1359" selection-end="1359" vertical-scroll-proportion="0.59386975">
+            <state line="40" column="42" selection-start="1436" selection-end="1436" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Game.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/gameplay/Game.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="20" selection-start="405" selection-end="405" vertical-scroll-proportion="0.3256705">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -110,8 +122,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/Main.java" />
         <option value="$PROJECT_DIR$/src/menu/Menu.java" />
+        <option value="$PROJECT_DIR$/src/gameplay/Game.java" />
+        <option value="$PROJECT_DIR$/src/main/Main.java" />
       </list>
     </option>
   </component>
@@ -234,10 +247,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -268,6 +277,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gameplay" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -561,8 +574,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="33" selection-start="1359" selection-end="1359" vertical-scroll-proportion="0.59386975">
+        <state line="40" column="42" selection-start="1436" selection-end="1436" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameplay/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="20" selection-start="405" selection-end="405" vertical-scroll-proportion="0.3256705">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
