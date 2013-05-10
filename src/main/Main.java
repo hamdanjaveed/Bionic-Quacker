@@ -24,6 +24,7 @@ public class Main extends StateBasedGame {
 
 	private static final int MENU_STATE_ID     = 0;
 	private static final int GAMEPLAY_STATE_ID = 1;
+	private static final int SCORE_STATE_ID = 2;
 
 	public static Audio stomp;
 	public static Audio theme;
@@ -60,6 +61,10 @@ public class Main extends StateBasedGame {
 
 	public static int getMenuStateId() {
 		return MENU_STATE_ID;
+	}
+
+	public static int getScoreStateId() {
+		return SCORE_STATE_ID;
 	}
 
 }

@@ -148,7 +148,7 @@ public class Game extends BasicGameState {
 				stompX = (new Random()).nextInt(16);
 				stompY = (new Random()).nextInt(2);
 				for (int x = stompX; x < stompX + 16; x++) {
-					for (int y = stompY; x < stompY + 16; y++) {
+					for (int y = stompY; y < stompY + 16; y++) {
 						if (grid[x][y] == 1) {
 							grid[x][y] = 3;
 						}
@@ -181,11 +181,11 @@ public class Game extends BasicGameState {
 					upCheck = true;
 				}
 				bqy -= delta * 4.0f;
-			} else if (time > 12500 && time < 15000 && bqy < gameContainer.getHeight() / 2 - bionicQuacker.getHeight() / 2) {
+			} else if (time > 12500 && time < 15000 && bqy < (stompY + 8) * 40 - bionicQuacker.getHeight()) {
 				if (!downCheck) {
 					downCheck = true;
 					bqy = -bionicQuacker.getHeight();
-					bqx = 400;
+					bqx = (stompX + 8) * 40 - bionicQuacker.getWidth() / 2 + 10;
 				}
 				bqy += delta * 4.0f;
 			} else if (time > 16800) {
@@ -200,7 +200,7 @@ public class Game extends BasicGameState {
 					here:
 					for (int y = 0; y < grid[0].length; y++) {
 						for (int x = 0; x < grid.length; x++) {
-							if (grid[x][y] == 1) {
+							if (grid[x][y] == 3) {
 								grid[x][y] = 2;
 								break here;
 							}
@@ -208,6 +208,10 @@ public class Game extends BasicGameState {
 					}
 					houseTime = 0;
 				}
+			}
+
+			if (time > 26000) {
+				stateBasedGame.enterState(Main.getScoreStateId());
 			}
 			time += delta;
 		}
