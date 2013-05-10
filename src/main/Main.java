@@ -10,6 +10,7 @@ import org.newdawn.slick.openal.Audio;
 import org.newdawn.slick.openal.AudioLoader;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.util.ResourceLoader;
+import score.Score;
 
 import java.io.IOException;
 
@@ -28,6 +29,8 @@ public class Main extends StateBasedGame {
 
 	public static Audio stomp;
 	public static Audio theme;
+
+	public static int housesStanding = 0;
 
 	public static void main(String[] args) throws SlickException {
 		AppGameContainer appGameContainer = new AppGameContainer(new ScalableGame(new Main(), GAME_WIDTH, GAME_HEIGHT));
@@ -53,6 +56,7 @@ public class Main extends StateBasedGame {
 	public void initStatesList(GameContainer gameContainer) throws SlickException {
 		addState(new Menu(MENU_STATE_ID));
 		addState(new Game(GAMEPLAY_STATE_ID));
+		addState(new Score(SCORE_STATE_ID));
 	}
 
 	public static int getGameplayStateId() {

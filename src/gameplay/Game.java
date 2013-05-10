@@ -147,13 +147,17 @@ public class Game extends BasicGameState {
 				simulating = true;
 				stompX = (new Random()).nextInt(16);
 				stompY = (new Random()).nextInt(2);
+				int numHousesGone = 0;
 				for (int x = stompX; x < stompX + 16; x++) {
 					for (int y = stompY; y < stompY + 16; y++) {
 						if (grid[x][y] == 1) {
 							grid[x][y] = 3;
+							numHousesGone++;
 						}
 					}
 				}
+
+				Main.housesStanding = 20-numHousesGone;
 			}
 		}
 
