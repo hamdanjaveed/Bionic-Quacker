@@ -61,6 +61,12 @@ public class Main extends StateBasedGame {
 
 		File plotPlaced = new File("file/plotPlaced.txt");
 		plotPlaced.createNewFile();
+
+		File plotMostHit = new File("file/plotMostHit.txt");
+		plotMostHit.createNewFile();
+
+		File plotMostHitWithHouse = new File("file/plotMostHitWithHouse.txt");
+		plotMostHitWithHouse.createNewFile();
 	}
 
 	public Main() {

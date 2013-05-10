@@ -80,12 +80,17 @@ public class Game extends BasicGameState {
 		time = -1;
 		bqx = -200;
 		bqy = 600;
+		leftCheck  = false;
+		rightCheck = false;
+		upCheck    = false;
+		downCheck = false;
+		houseTime = 0;
 	}
 
 	public void render(GameContainer gameContainer, StateBasedGame stateBasedGame, Graphics graphics) throws SlickException {
 		if (time != -1) {
 			if (time > 12800 && time < 15500) {
-				graphics.rotate((float) gameContainer.getWidth() / 2 + (float) Math.random() * 1000 - 500, (float) gameContainer.getHeight() / 2 + (float) Math.random() * 1000 - 500, (float) Math.random() * 0.5f);
+				graphics.rotate((float) gameContainer.getWidth() / 2 + (float) Math.random() * 1000 - 500, (float) gameContainer.getHeight() / 2 + (float) Math.random() * 1000 - 500, (float) Math.random());
 			}
 		}
 
@@ -96,7 +101,7 @@ public class Game extends BasicGameState {
 
 		for (int x = 0; x < grid.length; x++) {
 			for (int y = 0; y < grid[x].length; y++) {
-				if (grid[x][y] != 0) {
+				if (grid[x][y] != 0 && grid[x][y] != 5) {
 					house.draw(x * 40, y * 40);
 				}
 				if (grid[x][y] == 2) {
@@ -105,16 +110,17 @@ public class Game extends BasicGameState {
 			}
 		}
 
-		graphics.drawString("Houses placed: " + housesPlaced + "/" + placeTHIS, 10, 10);
+		if (!simulating) {
+			graphics.drawString("Houses placed: " + housesPlaced + "/" + placeTHIS, 10, 10);
+			if (canContinue) {
+				continueImage.draw(1050, 10);
+			} else {
+				continueImageGrey.draw(1050, 10);
+			}
+		}
 
 		if (housesPlaced < placeTHIS) {
 			ghostHouse.draw(mouseTileX * 40, mouseTileY * 40);
-		}
-
-		if (canContinue) {
-			continueImage.draw(1050, 10);
-		} else {
-			continueImageGrey.draw(1050, 10);
 		}
 
 		if (simulating) {
@@ -154,6 +160,8 @@ public class Game extends BasicGameState {
 						if (grid[x][y] == 1) {
 							grid[x][y] = 3;
 							numHousesGone++;
+						} else {
+							grid[x][y] = 5;
 						}
 					}
 				}
@@ -209,6 +217,38 @@ public class Game extends BasicGameState {
 					for (int x = 0; x < grid.length; x++) {
 						for (int y = 0; y < grid[x].length; y++) {
 							if (grid[x][y] == 1 || grid[x][y] == 3) {
+								char c = (char) ('A' + y);
+								String s = "" + x + c;
+								b.println(s);
+							}
+						}
+					}
+					b.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+
+				try {
+					PrintWriter b = new PrintWriter(new BufferedWriter(new FileWriter(new File("file/plotMostHitWithHouse.txt"), true)));
+					for (int x = 0; x < grid.length; x++) {
+						for (int y = 0; y < grid[x].length; y++) {
+							if (grid[x][y] == 3) {
+								char c = (char) ('A' + y);
+								String s = "" + x + c;
+								b.println(s);
+							}
+						}
+					}
+					b.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+
+				try {
+					PrintWriter b = new PrintWriter(new BufferedWriter(new FileWriter(new File("file/plotMostHit.txt"), true)));
+					for (int x = 0; x < grid.length; x++) {
+						for (int y = 0; y < grid[x].length; y++) {
+							if (grid[x][y] == 5) {
 								char c = (char) ('A' + y);
 								String s = "" + x + c;
 								b.println(s);
