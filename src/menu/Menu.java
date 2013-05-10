@@ -30,6 +30,10 @@ public class Menu extends BasicGameState {
 		mainMenuSelected = false;
 	}
 
+	public void enter(GameContainer gameContainer, StateBasedGame stateBasedGame) {
+		Main.theme.playAsMusic(1.0f, 1.0f, true);
+	}
+
 	public void render(GameContainer gameContainer, StateBasedGame stateBasedGame, Graphics graphics) throws SlickException {
 		if (mainMenuSelected) {
 			mainMenuBackgroundSelected.draw();

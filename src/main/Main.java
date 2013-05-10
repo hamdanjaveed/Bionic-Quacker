@@ -6,19 +6,27 @@ import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.ScalableGame;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.openal.Audio;
+import org.newdawn.slick.openal.AudioLoader;
 import org.newdawn.slick.state.StateBasedGame;
+import org.newdawn.slick.util.ResourceLoader;
+
+import java.io.IOException;
 
 public class Main extends StateBasedGame {
 
-	private static final String  GAME_NAME         = "Bionic Quacker";
-	private static final int     GAME_WIDTH        = 1280;
-	private static final int     GAME_HEIGHT       = 720;
-	private static final boolean MOUSE_GRABBED     = false;
-	private static final int     TARGET_FPS        = 60;
-	private static final boolean FULL_SCREEN       = false;
+	private static final String  GAME_NAME     = "Bionic Quacker";
+	private static final int     GAME_WIDTH    = 1280;
+	private static final int     GAME_HEIGHT   = 720;
+	private static final boolean MOUSE_GRABBED = false;
+	private static final int     TARGET_FPS    = 60;
+	private static final boolean FULL_SCREEN   = false;
 
-	private static final int     MENU_STATE_ID     = 0;
-	private static final int     GAMEPLAY_STATE_ID = 1;
+	private static final int MENU_STATE_ID     = 0;
+	private static final int GAMEPLAY_STATE_ID = 1;
+
+	public static Audio stomp;
+	public static Audio theme;
 
 	public static void main(String[] args) throws SlickException {
 		AppGameContainer appGameContainer = new AppGameContainer(new ScalableGame(new Main(), GAME_WIDTH, GAME_HEIGHT));
@@ -27,11 +35,18 @@ public class Main extends StateBasedGame {
 		appGameContainer.setTargetFrameRate(TARGET_FPS);
 		appGameContainer.setTitle(GAME_NAME);
 		appGameContainer.setShowFPS(false);
+		appGameContainer.setVSync(true);
 		appGameContainer.start();
 	}
 
 	public Main() {
 		super(GAME_NAME);
+		try {
+			stomp = AudioLoader.getAudio("WAV", ResourceLoader.getResourceAsStream("Stomp.wav"));
+			theme = AudioLoader.getAudio("WAV", ResourceLoader.getResourceAsStream("Theme.wav"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void initStatesList(GameContainer gameContainer) throws SlickException {
@@ -41,6 +56,10 @@ public class Main extends StateBasedGame {
 
 	public static int getGameplayStateId() {
 		return GAMEPLAY_STATE_ID;
+	}
+
+	public static int getMenuStateId() {
+		return MENU_STATE_ID;
 	}
 
 }
