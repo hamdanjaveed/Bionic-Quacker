@@ -12,6 +12,7 @@ import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.util.ResourceLoader;
 import score.Score;
 
+import java.io.File;
 import java.io.IOException;
 
 public class Main extends StateBasedGame {
@@ -32,7 +33,8 @@ public class Main extends StateBasedGame {
 
 	public static int housesStanding = 0;
 
-	public static void main(String[] args) throws SlickException {
+	public static void main(String[] args) throws SlickException, IOException {
+		buildDir();
 		AppGameContainer appGameContainer = new AppGameContainer(new ScalableGame(new Main(), GAME_WIDTH, GAME_HEIGHT));
 		appGameContainer.setDisplayMode(GAME_WIDTH, GAME_HEIGHT, FULL_SCREEN);
 		appGameContainer.setMouseGrabbed(MOUSE_GRABBED);
@@ -41,6 +43,24 @@ public class Main extends StateBasedGame {
 		appGameContainer.setShowFPS(false);
 		appGameContainer.setVSync(true);
 		appGameContainer.start();
+	}
+
+	private static void buildDir() throws IOException {
+		File numberOfHousesStanding = new File("file/numberOfHousesStanding.txt");
+		numberOfHousesStanding.getParentFile().mkdirs();
+		numberOfHousesStanding.createNewFile();
+
+		File netProfit = new File("file/netProfit.txt");
+		netProfit.createNewFile();
+
+		File winLoss = new File("file/winLoss.txt");
+		winLoss.createNewFile();
+
+		File profit = new File("file/profit.txt");
+		profit.createNewFile();
+
+		File plotPlaced = new File("file/plotPlaced.txt");
+		plotPlaced.createNewFile();
 	}
 
 	public Main() {

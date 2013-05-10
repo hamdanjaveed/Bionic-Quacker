@@ -7,6 +7,7 @@ import org.newdawn.slick.openal.SoundStore;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
+import java.io.*;
 import java.util.Random;
 
 public class Game extends BasicGameState {
@@ -158,6 +159,66 @@ public class Game extends BasicGameState {
 				}
 
 				Main.housesStanding = 20-numHousesGone;
+				try {
+					PrintWriter b = new PrintWriter(new BufferedWriter(new FileWriter(new File("file/numberOfHousesStanding.txt"), true)));
+					b.println(Main.housesStanding);
+					b.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+
+				try {
+					PrintWriter b = new PrintWriter(new BufferedWriter(new FileWriter(new File("file/netProfit.txt"), true)));
+					if (Main.housesStanding < 9)
+						b.println(-1);
+					else if (Main.housesStanding < 12)
+						b.println(0);
+					else
+						b.println(1);
+					b.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+
+				try {
+					PrintWriter b = new PrintWriter(new BufferedWriter(new FileWriter(new File("file/winLoss.txt"), true)));
+					if (Main.housesStanding < 9)
+						b.println("lose");
+					else if (Main.housesStanding < 12)
+						b.println("even");
+					else
+						b.println("win");
+					b.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+
+				try {
+					PrintWriter b = new PrintWriter(new BufferedWriter(new FileWriter(new File("file/profit.txt"), true)));
+					if (Main.housesStanding >= 12)
+						b.println("profit");
+					else
+						b.println("no profit");
+					b.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+
+				try {
+					PrintWriter b = new PrintWriter(new BufferedWriter(new FileWriter(new File("file/plotPlaced.txt"), true)));
+					for (int x = 0; x < grid.length; x++) {
+						for (int y = 0; y < grid[x].length; y++) {
+							if (grid[x][y] == 1 || grid[x][y] == 3) {
+								char c = (char) ('A' + y);
+								String s = "" + x + c;
+								b.println(s);
+							}
+						}
+					}
+					b.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 		}
 
